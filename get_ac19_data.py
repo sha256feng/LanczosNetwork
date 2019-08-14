@@ -135,8 +135,8 @@ def load_qm8(featurizer='MP',
     if reload:
         loaded, all_dataset, transformers = dc.utils.save.load_dataset_from_disk(
         save_dir)
-    if loaded:
-        return qm8_tasks, all_dataset, transformers
+        if loaded:
+            return qm8_tasks, all_dataset, transformers
 
     # Featurizer defined: I omitted other featurizers
     if featurizer == 'MP':

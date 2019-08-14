@@ -6,6 +6,7 @@ from easydict import EasyDict as edict
 
 
 def parse_arguments():
+  """argument accepted: -c, -l, -m, -t"""
   parser = argparse.ArgumentParser(
       description="Running Experiments of Deep Prediction")
   parser.add_argument(
@@ -38,7 +39,9 @@ def get_config(config_file, exp_dir=None):
   config = edict(yaml.load(open(config_file, 'r')))
 
   # create hyper parameters
+  # config.run_id was not defined before;
   config.run_id = str(os.getpid())
+  # the folder has a very clear name dicting time, PID, model, dataset;
   config.exp_name = '_'.join([
       config.model.name, config.dataset.name,
       time.strftime('%Y-%b-%d-%H-%M-%S'), config.run_id
