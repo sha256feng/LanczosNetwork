@@ -122,7 +122,7 @@ def load_qm8(featurizer='MP',
     # save_dir = '/tmp/qm8/MP/random'
 
     # Get the sdf data ready, "all.sdf", "all.sdf.csv" two files in the same folder;
-    dataset_file = 'ac19/10.sdf'
+    dataset_file = './1.sdf'
 
     # Get to know the tasks
     qm8_tasks = [
@@ -187,7 +187,6 @@ if __name__ == '__main__':
   tasks, datasets, transformers = load_qm8(featurizer='MP') #dc.molnet.load_qm8(
     #  featurizer='MP', reload=False)
   train_dataset, dev_dataset, test_dataset = datasets
-  pickle.dump(datasets, open('ac19/dc_feat_datasets.p', 'wb'))  
 
   dump_data(train_dataset, 'train')
   dump_data(dev_dataset, 'dev')
