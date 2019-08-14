@@ -122,7 +122,7 @@ def load_qm8(featurizer='MP',
     # save_dir = '/tmp/qm8/MP/random'
 
     # Get the sdf data ready, "all.sdf", "all.sdf.csv" two files in the same folder;
-    dataset_file = './all.sdf'
+    dataset_file = 'ac19/10.sdf'
 
     # Get to know the tasks
     qm8_tasks = [
